@@ -1,6 +1,10 @@
 import mapboxgl from "mapbox-gl";
+import { createIcons, icons } from "lucide"; // 👈 icons ham import qilamiz
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@ui/style.css";
+
+// 👇 Endi barcha Lucide ikonlarni yaratamiz
+createIcons({ icons });
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_API_TOKEN;
 const markerBtn = document.getElementById("marker");
@@ -35,22 +39,26 @@ const map = new mapboxgl.Map({
 });
 
 map.on("load", () => {
+  markerBtn.onclick = () => activate(markerBtn, "marker");
   map.on("click", (e) => {
-    const { lng, lat } = e.lngLat;
-
     // marker yaratish
-    const marker = new mapboxgl.Marker({
-      color: "#fa1f0f",
-      draggable: true,
-    })
-      .setLngLat([lng, lat])
-      .addTo(map);
+    if (mode === "marker") {
+      const { lng, lat } = e.lngLat;
+      const marker = new mapboxgl.Marker({
+        color: "#fa1f0f",
+        draggable: true,
+      })
+        .setLngLat([lng, lat])
+        .addTo(map);
 
-    // Faqat matnni yangilaymiz, yangi <p> yaratmaymiz
-    result.textContent = `[ ${lng.toFixed(6)}, ${lat.toFixed(6)} ]`;
-    markerArr.push(marker);
+      // Faqat matnni yangilaymiz, yangi <p> yaratmaymiz
+      result.textContent = `[ ${lng.toFixed(6)}, ${lat.toFixed(6)} ]`;
+      markerArr.push(marker);
+    }
+
+    //line chizish uchun
   });
-
+  // o'z joyini aniqlash
   myLocationBtn.onclick = () => {
     activate(myLocationBtn, "my-location");
     navigator.geolocation.getCurrentPosition(onSucces, onError);
