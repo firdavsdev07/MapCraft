@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MapCraft</title>
+    </head>
+    <body>
+        <div id="app relative">
+            <ul class="flex flex-col gap-2 z-50 absolute m-2">
+                <li>
+                    <button
+                        title="MY LOCATION"
+                        id="my-location"
+                        class="cursor-pointer w-12 h-12 p-3 rounded-md"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-white hover:text-gray-500"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="22" y1="12" x2="18" y2="12" />
+                            <line x1="6" y1="12" x2="2" y2="12" />
+                            <line x1="12" y1="6" x2="12" y2="2" />
+                            <line x1="12" y1="22" x2="12" y2="18" />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        title="MARKER"
+                        id="marker"
+                        class="cursor-pointer w-12 h-12 p-3 rounded-md"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-white hover:text-gray-500"
+                        >
+                            <path
+                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                            />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        title="LINE"
+                        class="cursor-pointer w-12 h-12 p-3 rounded-md"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-white hover:text-gray-500"
+                        >
+                            <line x1="5" y1="19" x2="19" y2="5" />
+                            <circle cx="6.5" cy="17.5" r="2.5" />
+                            <circle cx="17.5" cy="6.5" r="2.5" />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        title="POLYGON"
+                        class="cursor-pointer w-12 h-12 p-3 rounded-md"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-white hover:text-gray-500"
+                        >
+                            <path
+                                d="M12 2l-10 6 10 6 10-6-10-6zM2 18l10 6 10-6"
+                            />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        title="DOWNLOAD"
+                        class="cursor-pointer w-12 h-12 p-3 rounded-md"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-white hover:text-gray-500"
+                        >
+                            <path
+                                d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                            />
+                            <polyline points="7,10 12,15 17,10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        title="HELP"
+                        id="help"
+                        class="cursor-pointer w-12 h-12 p-3 rounded-md"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-white hover:text-gray-500"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+            <div id="map" class="w-full h-screen absolute"></div>
+            <div
+                id="coordinates"
+                class="absolute bottom-4 right-4 text-white p-2 text-sm z-[9999]"
+            ></div>
+        </div>
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>

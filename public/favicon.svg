@@ -1,0 +1,54 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#0F172A" rx="20"/>
+
+  <!-- Map pin icon -->
+  <defs>
+    <linearGradient id="pinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main pin shape -->
+  <path d="M100 40 C120 40 135 55 135 75 C135 100 100 140 100 140 C100 140 65 100 65 75 C65 55 80 40 100 40 Z"
+        fill="url(#pinGrad)"
+        stroke="#1E40AF"
+        stroke-width="4"/>
+
+  <!-- Inner circle of pin -->
+  <circle cx="100" cy="75" r="15" fill="#0F172A" stroke="#60A5FA" stroke-width="3"/>
+  <circle cx="100" cy="75" r="8" fill="#FFFFFF"/>
+
+  <!-- Grid/map lines in background -->
+  <!-- Vertical lines -->
+  <line x1="40" y1="30" x2="40" y2="90" stroke="#1E3A8A" stroke-width="2" opacity="0.3"/>
+  <line x1="70" y1="30" x2="70" y2="90" stroke="#1E3A8A" stroke-width="2" opacity="0.3"/>
+  <line x1="130" y1="30" x2="130" y2="90" stroke="#1E3A8A" stroke-width="2" opacity="0.3"/>
+  <line x1="160" y1="30" x2="160" y2="90" stroke="#1E3A8A" stroke-width="2" opacity="0.3"/>
+
+  <!-- Horizontal lines -->
+  <line x1="30" y1="40" x2="90" y2="40" stroke="#1E3A8A" stroke-width="2" opacity="0.3"/>
+  <line x1="30" y1="70" x2="90" y2="70" stroke="#1E3A8A" stroke-width="2" opacity="0.3"/>
+  <line x1="110" y1="40" x2="170" y2="40" stroke="#1E3A8A" stroke-width="2" opacity="0.3"/>
+  <line x1="110" y1="70" x2="170" y2="70" stroke="#1E3A8A" stroke-width="2" opacity="0.3"/>
+
+  <!-- Bottom map-like shapes -->
+  <path d="M30 150 L50 155 L70 148 L90 160 L110 152 L130 158 L150 150 L170 155"
+        stroke="#10B981"
+        stroke-width="3"
+        fill="none"
+        opacity="0.4"/>
+
+  <path d="M30 165 L45 170 L65 163 L85 175 L105 168 L125 172 L145 165 L170 170"
+        stroke="#8B5CF6"
+        stroke-width="3"
+        fill="none"
+        opacity="0.4"/>
+
+  <!-- Corner accent dots -->
+  <circle cx="30" cy="30" r="4" fill="#F59E0B"/>
+  <circle cx="170" cy="30" r="4" fill="#EF4444"/>
+  <circle cx="30" cy="170" r="4" fill="#10B981"/>
+  <circle cx="170" cy="170" r="4" fill="#8B5CF6"/>
+</svg>
