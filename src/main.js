@@ -40,7 +40,7 @@ const map = new mapboxgl.Map({
 });
 
 map.on("load", () => {
-  map.addSource("lineLayerId", {
+  map.addSource("lineLayer", {
     type: "geojson",
     data: {
       type: "Feature",
@@ -52,8 +52,8 @@ map.on("load", () => {
   });
 
   map.addLayer({
-    id: "lineLayerId",
-    source: "lineLayerId",
+    id: "lineLayer",
+    source: "lineLayer",
     type: "line",
     layout: {
       "line-join": "round",
@@ -62,6 +62,24 @@ map.on("load", () => {
     paint: {
       "line-color": "#00ffea",
       "line-width": 3,
+    },
+  });
+  map.addSource("linePoints", {
+    type: "geojson",
+    data: {
+      type: "FeatureCollection",
+      features: [],
+    },
+  });
+  map.addLayer({
+    id: "linePoints",
+    source: "linePoints",
+    type: "circle",
+    paint: {
+      "circle-radius": 5,
+      "circle-color": "#ff0000",
+      "circle-stroke-color": "#fff",
+      "circle-stroke-width": 1,
     },
   });
   markerBtn.onclick = () => activate(markerBtn, "marker");
@@ -85,7 +103,7 @@ map.on("load", () => {
     lineBtn.onclick = () => activate(lineBtn, "line");
     if (mode === "line") {
       lineCoordinates.push([lng, lat]);
-      map.getSource("lineLayerId").setData({
+      map.getSource("lineLayer").setData({
         type: "Feature",
         geometry: {
           type: "LineString",
@@ -93,6 +111,17 @@ map.on("load", () => {
         },
       });
       result.textContent = `[ ${lng.toFixed(6)}, ${lat.toFixed(6)} ]`;
+      const pointFeatures = lineCoordinates.map((coord) => ({
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: coord,
+        },
+      }));
+      map.getSource("linePoints").setData({
+        type: "FeatureCollection",
+        features: pointFeatures,
+      });
     }
   });
   // o'z joyini aniqlash
