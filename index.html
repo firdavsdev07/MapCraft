@@ -83,6 +83,53 @@
                 </li>
             </ul>
 
+            <!-- Help Modal -->
+            <div
+                id="help-modal"
+                class="hidden absolute top-0 left-14 mt-2 z-[10000]"
+            >
+                <div
+                    class="bg-black bg-opacity-30 text-white rounded-lg shadow-lg p-6 w-full max-w-xs backdrop-blur-sm"
+                >
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold">Help</h2>
+                        <button id="close-modal" class="text-white">
+                            &times;
+                        </button>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="crosshair" class="w-5 h-5"></i>
+                            <span
+                                ><b>My Location:</b> Shows your current
+                                location.</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            <span><b>Marker:</b> Add a pin.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i
+                                data-lucide="move-diagonal-2"
+                                class="w-5 h-5"
+                            ></i>
+                            <span><b>Line:</b> Draw a line.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="layers-2" class="w-5 h-5"></i>
+                            <span><b>Polygon:</b> Draw a shape.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            <span
+                                ><b>Download:</b> Save as a GeoJSON file.</span
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <div id="map" class="w-full h-screen absolute"></div>
             <div
                 id="coordinates"

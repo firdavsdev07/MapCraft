@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+#close-modal {
+    font-size: 2rem;
+    line-height: 1;
+}

@@ -2,6 +2,7 @@ import mapboxgl from "mapbox-gl";
 import { createIcons, icons } from "lucide";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { initDownloadButton } from "@modules/download.js";
+import { initHelpModal } from "@modules/help.js";
 import "@ui/style.css";
 
 createIcons({ icons });
@@ -14,6 +15,8 @@ const coordinatesView = document.getElementById("coordinates");
 const lineBtn = document.getElementById("line");
 const polygonBtn = document.getElementById("polygon");
 const downloadBtn = document.getElementById("download");
+const helpModal = document.getElementById("help-modal");
+const closeModalBtn = document.getElementById("close-modal");
 
 const result = document.createElement("p");
 result.className = "px-1.5 py-1 rounded-sm mt-1";
@@ -93,7 +96,7 @@ map.on("load", () => {
     source: "polygonLayer",
     layout: {},
     paint: {
-      "fill-color": "#0080ff",
+      "fill-color": "#00ff80",
       "fill-opacity": 0.5,
     },
   });
@@ -104,7 +107,7 @@ map.on("load", () => {
     source: "polygonLayer",
     layout: {},
     paint: {
-      "line-color": "#000",
+      "line-color": "#00ffea",
       "line-width": 3,
     },
   });
@@ -113,7 +116,7 @@ map.on("load", () => {
   markerBtn.onclick = () => activate(markerBtn, "marker");
   lineBtn.onclick = () => activate(lineBtn, "line");
   polygonBtn.onclick = () => activate(polygonBtn, "polygon");
-  helpBtn.onclick = () => activate(helpBtn, "help");
+  initHelpModal(helpBtn, helpModal);
 
   // ================= MAP CLICK ====================
   map.on("click", (e) => {
